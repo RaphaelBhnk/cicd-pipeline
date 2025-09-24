@@ -22,3 +22,11 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Success message
+        if: success()
+        run: echo "All tests passed successfully!"
+
+      - name: Failure message
+        if: failure()
+        run: echo "Oops! Some tests failed."
